@@ -1,0 +1,23 @@
+
+
+.product-list header {
+    display: flex;
+    border-bottom: 3px black solid;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.button-box{
+    margin-left: 740px;
+}
+
+#delete-product-btn{
+    margin-left: 32px;
+}
+.product-list-body{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40.5px;
+    justify-items: center;    
+}
