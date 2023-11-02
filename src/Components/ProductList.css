@@ -5,11 +5,11 @@
     border-bottom: 3px black solid;
     align-items: center;
     margin-bottom: 25px;
+    justify-content: space-between ;
 }
 
-.button-box{
-    margin-left: 740px;
-}
+
+
 
 #delete-product-btn{
     margin-left: 32px;
