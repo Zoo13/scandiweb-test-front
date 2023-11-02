@@ -7,8 +7,18 @@ const Box = (props) => {
         props.sendId(event.target.value)
     }
     let x;
-    if(props.type === 'dvd'){x = 'MB'}
-    if(props.type === 'book'){x = 'KG'}
+    let y; 
+    if(props.type === 'dvd'){
+        x = 'MB'
+        y = 'Size'
+    }
+    if(props.type === 'book'){
+        x = 'KG'
+        y = 'Weight'
+    }
+    if(props.type === 'furniture'){
+        y = 'Dimensions'
+    }
 
     return (
         <Card className='card-box'>
@@ -22,7 +32,7 @@ const Box = (props) => {
                 <h5>{props.sku}</h5>
                 <h5>{props.name}</h5>
                 <h5>{props.price} $</h5>
-                <h5>Size: {props.size} {x}</h5>
+                <h5>{y}: {props.size} {x}</h5>
                 {/* <h5>Type : {props.type}</h5> */}
             </div>
         </Card>
