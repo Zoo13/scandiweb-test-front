@@ -20,6 +20,7 @@
     margin-bottom: 20px;
 }
 
-.delete-checkbox input {
+.delete-checkbox {
     border-color: grey;
+
 }

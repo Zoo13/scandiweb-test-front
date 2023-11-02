@@ -1,5 +1,5 @@
 import './Card.css'
-import { Card , Form } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const Box = (props) => {
 
@@ -22,11 +22,12 @@ const Box = (props) => {
 
     return (
         <Card className='card-box'>
-            <Form.Check type="checkbox"
+            <input
+                type="checkbox"
                 value={props.id}
-                className="delete-checkbox"
-                onClick={select}>
-            </Form.Check>
+                className="delete-checkbox form-check-input"
+                onClick={select}>   
+            </input>
             <div className='box-body'>
                 {/* <h5>ID : {props.id}</h5> */}
                 <h5>{props.sku}</h5>
