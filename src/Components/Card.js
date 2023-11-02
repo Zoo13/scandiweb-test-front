@@ -7,8 +7,8 @@ const Box = (props) => {
         props.sendId(event.target.value)
     }
     let x;
-    if(props.type == 'dvd'){x = 'MB'}
-    if(props.type == 'book'){x = 'KG'}
+    if(props.type === 'dvd'){x = 'MB'}
+    if(props.type === 'book'){x = 'KG'}
 
     return (
         <Card className='card-box'>

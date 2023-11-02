@@ -8,13 +8,6 @@ import { Button, Form, InputGroup, Badge, Card } from 'react-bootstrap';
 
 
 const Addproduct = (props) => {
-    const [errors, seterrors] = useState([])
-
-    useEffect(() => {
-        if (props.error) {
-            seterrors(props.error);
-        }
-    }, [props.error]);
 
     const navigate = useNavigate();
     const [productType, setProductType] = useState('DVD')
@@ -25,9 +18,9 @@ const Addproduct = (props) => {
     let dim;
 
     const getDimensions = (type, dimensions) => {
-        if (type == 'dvd') { dim = dimensions }
-        if (type == 'book') { dim = dimensions }
-        if (type == 'furniture') {
+        if (type === 'dvd') { dim = dimensions }
+        if (type === 'book') { dim = dimensions }
+        if (type === 'furniture') {
             dim = {
                 height: dimensions['height'],
                 width: dimensions['width'],
@@ -40,7 +33,7 @@ const Addproduct = (props) => {
     const [productInfo, setProductInfo] = useState({})
     const changeInputHandler = (input, value) => {
         setProductInfo((prevInfo) => {
-            if (input == 'price') { value = +value }
+            if (input === 'price') { value = +value }
             return {
                 ...prevInfo,
                 [input]: value
@@ -52,7 +45,7 @@ const Addproduct = (props) => {
         event.preventDefault()
         productInfo['size'] = dim
         props.sendPost(productInfo, navigate)
-        seterrors(props.errors);
+
     }
 
     return (

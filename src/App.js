@@ -30,7 +30,6 @@ function App() {
       navigate('/')
       arrayOfValues.splice(0, arrayOfValues.length);
     }
-
     handleApiResponse(arrayOfValues)
     getData()
   }
@@ -40,7 +39,7 @@ function App() {
   }
 
   async function deleter(idArr) {
-    const response = await fetch("http://localhost/scandiTest/php/delete", {
+      await fetch("http://localhost/scandiTest/php/delete", {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -67,6 +66,7 @@ function App() {
       console.log('Something went wrong')
     }
   }, []);
+
 
   useEffect(() => {
     getData();
