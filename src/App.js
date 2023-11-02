@@ -17,7 +17,7 @@ function App() {
     setResponseMessage(responseMessage)
   }
   async function sendPOST(product , navigate) {
-    const response = await fetch('http://3.70.168.82:81/scandiTest/php/saveproduct', {
+    const response = await fetch('http://localhost/scandiTest/php/saveproduct', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ function App() {
   }
 
   async function deleter(idArr) {
-      await fetch("http://3.70.168.82:81/scandiTest/php/delete", {
+      await fetch("http://localhost/scandiTest/php/delete", {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function App() {
 
   const getData = useCallback(async () => {
     try {
-      const response = await fetch('http://3.70.168.82:81/scandiTest/php/getProducts')
+      const response = await fetch('http://localhost/scandiTest/php/getProducts')
       const data = await response.json()
       if (!response.ok) {
         throw new Error('Something went wrong')

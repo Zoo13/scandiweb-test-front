@@ -1,27 +1,21 @@
 import Box from "./Card";
 import './ProductList.css'
 import {Link} from 'react-router-dom'
-import { useState } from "react";
-import { Button , Badge } from 'react-bootstrap';
+import { Button , Badge, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ProductList = (props) => {
 
-    const [selectedProductList , setSelectedProductList] = useState([])
-
-    const selectedListArray = (checkedBoxID) =>{
-        setSelectedProductList(prevList =>{
-            if(prevList.includes(checkedBoxID)){
-                return [...prevList.filter(id => id !== checkedBoxID)]
-            }else {
-                return [...prevList, checkedBoxID]
-            }
-            
-        })
-    }
-
     const deleteHandler = () =>{
-        props.takeArr(selectedProductList)
+
+        let checkboxes = document.getElementsByClassName('delete-checkbox')
+        let prodactIdArray = [];
+        for (const checkbox of checkboxes) {
+            if (checkbox.checked) {
+                prodactIdArray.push(checkbox.value)
+            }
+        }
+        props.takeArr(prodactIdArray)        
     }
  
     return (
@@ -44,7 +38,6 @@ const ProductList = (props) => {
                         type={each.type}
                         size={each.size}
                         specific={each.specific}
-                        sendId={selectedListArray}
                     />)}
             </div>
         </div>

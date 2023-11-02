@@ -3,9 +3,6 @@ import { Card } from 'react-bootstrap';
 
 const Box = (props) => {
 
-    const select = (event) => {
-        props.sendId(event.target.value)
-    }
     let x;
     let y; 
     if(props.type === 'dvd'){
@@ -26,15 +23,13 @@ const Box = (props) => {
                 type="checkbox"
                 value={props.id}
                 className="delete-checkbox form-check-input"
-                onClick={select}>   
+            >   
             </input>
             <div className='box-body'>
-                {/* <h5>ID : {props.id}</h5> */}
                 <h5>{props.sku}</h5>
                 <h5>{props.name}</h5>
                 <h5>{props.price} $</h5>
                 <h5>{y}: {props.size} {x}</h5>
-                {/* <h5>Type : {props.type}</h5> */}
             </div>
         </Card>
     )
