@@ -24,7 +24,7 @@ const Box = (props) => {
         <Card className='card-box'>
             <Form.Check type="checkbox"
                 value={props.id}
-                className="delete-chekbox"
+                className="delete-checkbox"
                 onClick={select}>
             </Form.Check>
             <div className='box-body'>

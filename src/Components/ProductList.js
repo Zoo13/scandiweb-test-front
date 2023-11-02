@@ -9,12 +9,12 @@ const ProductList = (props) => {
 
     const [selectedProductList , setSelectedProductList] = useState([])
 
-    const selectedListArray = (chekedBoxID) =>{
+    const selectedListArray = (checkedBoxID) =>{
         setSelectedProductList(prevList =>{
-            if(prevList.includes(chekedBoxID)){
-                return [...prevList.filter(id => id !== chekedBoxID)]
+            if(prevList.includes(checkedBoxID)){
+                return [...prevList.filter(id => id !== checkedBoxID)]
             }else {
-                return [...prevList, chekedBoxID]
+                return [...prevList, checkedBoxID]
             }
             
         })
@@ -29,8 +29,8 @@ const ProductList = (props) => {
             <header>
                 <h1> <Badge bg="dark"> Product List </Badge>  </h1>
                 <div className="button-box">
-                    <Link to='/addproduct'><Button> ADD </Button></Link>
-                    <Button id='delete-product-btn' variant="danger" onClick={deleteHandler}> MASS DELETE </Button>
+                    <Link to='/addproduct'><Button>ADD</Button></Link>
+                    <Button id='delete-product-btn' variant="danger" onClick={deleteHandler}>MASS DELETE</Button>
                 </div>
             </header>
             <div className="product-list-body">
